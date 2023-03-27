@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            padding-left: 0;
+        
+            
+        }
+        li {
+            display: block;
+            float: left;
+            width: 25%;
+            border: 2px solid white;
+            padding: 5px;
+            height: 40px;
+            background-color: #4A2DB6;
+            color: white;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <label for="choice">Selecione o mês:</label>
+    <select id="choice">
+        <option value="">--Escolha aqui--</option>
+        <option value="janeiro">Janeiro</option>
+        <option value="fevereiro">Fevereiro</option>
+        <option value="marco">Março</option>
+        <option value="abril">Abril</option>
+        <option value="maio">Maio</option>
+        <option value="junho">Junho</option>
+        <option value="julho">Julho</option>
+        <option value="agosto">Agosto</option>
+        <option value="setembro">Setembro</option>
+        <option value="outubro">Outubro</option>
+        <option value="novembro">Novembro</option>
+        <option value="dezembro">Dezembro</option>
+
+    </select>
+    <h1></h1>
+    <ul>
+        <li></li>
+    </ul>
+    <script>
+        var select = document.querySelector('select');
+        var list = document.querySelector('ul');
+        var h1 = document.querySelector('h1');
+        
+        select.onchange = function() {
+        var choice = select.value;
+        var days = 31;
+        // ADD CONDITIONAL HERE
+        if(choice === 'fevereiro') {
+        days = 28;
+        } else if(choice === 'abril' || choice === 'junho' || choice === 'setembro'|| choice === 'novembro') {
+        days = 30;}
+
+        createCalendar(days, choice);
+        }
+
+        function createCalendar(days, choice) {
+        list.innerHTML = '';
+        h1.textContent = choice;
+        for (var i = 1; i <= days; i++) {
+            var listItem = document.createElement('li');
+            listItem.textContent = i;
+            list.appendChild(listItem);
+        }
+        }
+        createCalendar(31,'janeiro');
+
+    </script>
+</body>
+</html>
