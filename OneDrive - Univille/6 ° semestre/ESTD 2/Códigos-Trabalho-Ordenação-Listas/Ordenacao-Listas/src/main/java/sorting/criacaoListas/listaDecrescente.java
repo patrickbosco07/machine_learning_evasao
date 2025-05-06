@@ -1,17 +1,12 @@
 package sorting.criacaoListas;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class listaDecrescente {
-    public listaDecrescente(int i) {
-        //TODO Auto-generated constructor stub
-    }
+    
     // Gera uma lista ordenada em ordem decrescente
-    public static List<Integer> generateDescendingList(int size) {
-        List<Integer> list = new ArrayList<>(size);
-        for (int i = size - 1; i >= 0; i--) {
-            list.add(i);
+    public int[] generateDescendingList(int size) {
+        int[] list = new int[size];
+        for (int i = 0; i < size; i++) {
+            list[i] = size - i;  // Gera 5, 4, 3, 2, 1 para size=5
         }
         return list;
     }

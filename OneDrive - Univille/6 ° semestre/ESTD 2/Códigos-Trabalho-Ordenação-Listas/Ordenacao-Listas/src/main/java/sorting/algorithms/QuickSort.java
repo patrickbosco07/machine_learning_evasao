@@ -41,4 +41,9 @@ public class QuickSort implements Isort {
         elementos[i] = elementos[j];
         elementos[j] = aux;
     }
+
+    @Override
+    public String getName() {
+        return "QuickSort";
+    }
 }

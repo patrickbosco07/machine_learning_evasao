@@ -1,17 +1,12 @@
 package sorting.criacaoListas;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class listaCrescente {
-    public listaCrescente(int i) {
-        //TODO Auto-generated constructor stub
-    }
+    
     // Gera uma lista ordenada em ordem crescente
-    public static List<Integer> generateAscendingList(int size) {
-        List<Integer> list = new ArrayList<>(size);
+    public int[] generateAscendingList(int size) {
+        int[] list = new int[size];
         for (int i = 0; i < size; i++) {
-            list.add(i);
+            list[i] = i;
         }
         return list;
     }
